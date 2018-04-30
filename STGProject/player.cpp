@@ -28,11 +28,11 @@ void player::update() {
 
 	if (keyboardGet(KEY_INPUT_Z) > 0) {
 		playerShotFlag = true;
-		DrawFormatString(0, 0, GetColor(255, 255, 255), "shoot");
+		DrawFormatString(0, 20, GetColor(255, 255, 255), "shoot");
 	}
 	if (keyboardGet(KEY_INPUT_Z) == 0) {
 		playerShotFlag = false;
-		DrawFormatString(0, 0, GetColor(255, 255, 255), "no shoot");
+		DrawFormatString(0, 20, GetColor(255, 255, 255), "no shoot");
 	}
 }
 

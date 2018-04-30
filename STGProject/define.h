@@ -1,11 +1,7 @@
 #pragma once
 
 #define NAME 64
-
-class define {
-public:
-	static double PI;
-};
+#define PI 3.141592654f
 
 enum characterType {
 	TYPE_NONE,

@@ -5,11 +5,14 @@
 class gameMgr :public baseScene {
 public:
 	gameMgr();
-	~gameMgr() = default;
+	~gameMgr();
 	void update();
 	void draw();
+	static int getCurrentFrame();
 
 private:
+	static int frame;
 	baseObject* _player;
 	baseObject* _shot;
+	baseObject* _enemy;
 };
