@@ -7,26 +7,19 @@
 double enemy::_x = 100.0;
 double enemy::_y = 100.0;
 float enemy::angle = 0.0f;
-int enemy::count = 0;
+int enemy::counter = 0;
 
 enemy::enemy() {
 	_img = LoadGraph("img/enemy00.png");
 }
 
 void enemy::update() {
+	counter++;
+
+	angle = PI * 2 / 120 * counter;
+
 	_x += cos(angle)*speed;
-//	_y += sin(angle)*speed;
-
-	if (gameMgr::getCurrentFrame() % 12 == 0) {
-
-		if ((count % 24) < 12) {
-			angle = (PI * 2) / (count % 12 + 1);
-		}
-		if ((count % 24) >= 12) {
-			angle = (PI * 2) / (12 - count % 12);
-		}
-		count++;
-	}
+	_y += sin(angle)*speed;
 }
 
 void enemy::draw() {

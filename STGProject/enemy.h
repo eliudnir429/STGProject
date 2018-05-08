@@ -13,5 +13,5 @@ private:
 	static float angle;
 	float speed = 1.5;
 	int _img;
-	static int count;
+	static int counter;
 };
