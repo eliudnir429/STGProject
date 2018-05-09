@@ -2,6 +2,8 @@
 
 #define NAME 64
 #define PI 3.141592654f
+#define WINDOW_W 1280
+#define WINDOW_H 720
 
 enum characterType {
 	TYPE_NONE,

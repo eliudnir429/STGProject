@@ -9,7 +9,7 @@ bool systemMain::initialize() {
 	SetWindowSizeChangeEnableFlag(TRUE);	//ウィンドウサイズを自由に変更できるようにする
 	ChangeWindowMode(TRUE);			//ウィンドウモードに変更
 //	SetWindowSizeExtendRate(1.0);	//ウィンドウサイズを変更したい時はここに倍率を指定する
-	SetGraphMode(1280, 720, 32);
+	SetGraphMode(WINDOW_W, WINDOW_H, 32);
 	if (DxLib_Init()) {				//DXライブラリ初期化処理
 		return false;				//異常終了したら即座にやめる
 	}

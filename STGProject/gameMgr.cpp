@@ -3,6 +3,7 @@
 #include "player.h"
 #include "shot.h"
 #include "enemy.h"
+#include "bossEnemy.h"
 
 int gameMgr::frame = 0;
 
@@ -10,6 +11,7 @@ gameMgr::gameMgr() {
 	_player = new player();
 //	_shot = new shot();
 	_enemy = new enemy();
+	_boss = std::make_shared<bossEnemy>(100.f, 100.f);
 }
 
 gameMgr::~gameMgr() {
@@ -21,6 +23,7 @@ void gameMgr::update() {
 	_player->update();
 //	_shot->update();
 	_enemy->update();
+	_boss->update();
 
 	frame++;
 }
@@ -30,6 +33,7 @@ void gameMgr::draw() {
 	_player->draw();
 //	_shot->draw();
 	_enemy->draw();
+	_boss->draw();
 }
 
 int gameMgr::getCurrentFrame() {

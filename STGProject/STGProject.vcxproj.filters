@@ -60,6 +60,9 @@
     <ClCompile Include="enemy.cpp">
       <Filter>ソース ファイル\game</Filter>
     </ClCompile>
+    <ClCompile Include="bossEnemy.cpp">
+      <Filter>ソース ファイル\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="baseScene.h">
@@ -93,6 +96,9 @@
       <Filter>ソース ファイル\scene</Filter>
     </ClInclude>
     <ClInclude Include="enemy.h">
+      <Filter>ソース ファイル\game</Filter>
+    </ClInclude>
+    <ClInclude Include="bossEnemy.h">
       <Filter>ソース ファイル\game</Filter>
     </ClInclude>
   </ItemGroup>
