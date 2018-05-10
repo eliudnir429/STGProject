@@ -20,11 +20,7 @@ shot::shot() {
 }
 
 void shot::update() {
-	for (int i = 0; i < 10; i++) {
-		if (player::getPlayerShotflag() == true) {
-			_shot[i].y -= 10;
-		}
-	}
+
 }
 
 void shot::draw() {

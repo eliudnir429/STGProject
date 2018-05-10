@@ -63,6 +63,9 @@
     <ClCompile Include="bossEnemy.cpp">
       <Filter>ソース ファイル\game</Filter>
     </ClCompile>
+    <ClCompile Include="Task.h">
+      <Filter>ソース ファイル\system</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="baseScene.h">

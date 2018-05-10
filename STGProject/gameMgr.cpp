@@ -1,21 +1,20 @@
 #include "gameMgr.h"
 #include "DxLib.h"
-#include "player.h"
 #include "shot.h"
 #include "enemy.h"
 #include "bossEnemy.h"
+#include <iostream>
 
 int gameMgr::frame = 0;
 
 gameMgr::gameMgr() {
-	_player = new player();
+	_player = std::make_shared<player>();
 //	_shot = new shot();
 	_enemy = new enemy();
 	_boss = std::make_shared<bossEnemy>(100.f, 100.f);
 }
 
 gameMgr::~gameMgr() {
-	delete _player;
 	delete _enemy;
 }
 

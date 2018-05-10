@@ -1,18 +1,16 @@
 #pragma once
-#include "baseObject.h"
+#include "Task.h"
 
-class player :public baseObject {
+class player :public task {
 public:
 	player();
-	~player() = default;
-	void update();
-	void draw();
-	static bool getPlayerShotflag();
+	virtual ~player() = default;
+	bool update() override;
+	void draw() const override;
 
 private:
-	static int x, y;
-	int width, height;
-	int img;
-	static bool playerShotFlag;
+	void move();
 
+	float _x, _y;
+	int _img;
 };

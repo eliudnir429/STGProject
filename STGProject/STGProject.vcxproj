@@ -134,6 +134,7 @@
     <ClCompile Include="sceneMgr.cpp" />
     <ClCompile Include="shot.cpp" />
     <ClCompile Include="systemMain.cpp" />
+    <ClCompile Include="Task.h" />
     <ClCompile Include="title.cpp" />
   </ItemGroup>
   <ItemGroup>
