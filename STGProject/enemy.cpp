@@ -4,25 +4,17 @@
 #include "define.h"
 #include "gameMgr.h"
 
-double enemy::_x = 100.0;
-double enemy::_y = 100.0;
-float enemy::angle = 0.0f;
-int enemy::counter = 0;
-
-enemy::enemy() {
+enemy::enemy() : _x(200), _y(200), _angle(0.0), _speed(1.5) {
 	_img = LoadGraph("img/enemy00.png");
 }
 
 void enemy::update() {
-	counter++;
-
-	angle = PI * 2 / 120 * counter;
-
-	_x += cos(angle)*speed;
-	_y += sin(angle)*speed;
+	_counter++;
+	_angle = PI * 2 / 120 * (_counter % 120);
+	_x += cos(_angle)*_speed;
+	_y += sin(_angle)*_speed;
 }
 
 void enemy::draw() {
 	DrawGraph(_x, _y, _img, TRUE);
-	DrawFormatString(0, 400, GetColor(255, 255, 255), "%lf,%lf", _x, _y);
 }

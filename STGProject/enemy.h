@@ -9,9 +9,9 @@ public:
 	void draw();
 
 private:
-	static double _x, _y;
-	static float angle;
-	float speed = 1.5;
+	float _x, _y;
+	float _angle;
+	float _speed;
 	int _img;
-	static int counter;
+	int _counter;
 };

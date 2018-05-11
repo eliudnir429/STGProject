@@ -16,22 +16,7 @@ void title::update() {
 		selectNum = (selectNum + 1) % MENU_NUM;
 	}
 	if (keyboardGet(KEY_INPUT_Z) == 1) {
-		switch (selectNum) {
-		case 0:
-			sceneMgr::setScene(GAME_MAIN);
-			break;
-
-		case 1:
-			sceneMgr::setScene(GAME_CONFIG);
-			break;
-
-		case 2:
-			sceneMgr::setScene(GAME_EXIT);
-			break;
-
-		default:
-			break;
-		}
+		sceneMgr::changeState(GAME_MAIN);
 	}
 	for (int i = 0; i < MENU_NUM; i++) {
 		if (selectNum == i) {
@@ -39,7 +24,6 @@ void title::update() {
 		}
 		else {
 			titleElements[i].x = 100;
-
 		}
 	}
 }

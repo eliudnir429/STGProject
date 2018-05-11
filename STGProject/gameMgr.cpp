@@ -8,6 +8,7 @@
 int gameMgr::frame = 0;
 
 gameMgr::gameMgr() {
+	DrawFormatString(100, 100, GetColor(255, 255, 255), "gamemgr called");
 	_player = std::make_shared<player>();
 //	_shot = new shot();
 	_enemy = new enemy();

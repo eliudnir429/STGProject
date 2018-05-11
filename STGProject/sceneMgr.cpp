@@ -2,40 +2,46 @@
 #include "title.h"
 #include "gameMgr.h"
 
-GAME_STATE sceneMgr::state = GAME_TITLE;
+GAME_STATE sceneMgr::_state = GAME_TITLE;
+bool sceneMgr::sceneChangeFlag = false;
 
-sceneMgr::~sceneMgr()
-{
-	delete pScene;
-}
-
-void sceneMgr::setScene(GAME_STATE tmp) {
-	sceneMgr::state = tmp;
-}
-
-void sceneMgr::changeScene() {
-	switch (state) {
-	case GAME_TITLE:
-		pScene = new title();
-		break;
-
-	case GAME_MAIN:
-		pScene = new gameMgr();
-		break;
-
-	case GAME_RESULT:
-		break;
-
-	default:
-		break;
-	}
-}
+sceneMgr::sceneMgr() {
+	_pScene = std::make_shared<title>();
+}	
 
 void sceneMgr::update() {
-	changeScene();
-	pScene->update();
+	if (sceneChangeFlag) {
+		changeScene();
+	}
+	_pScene->update();
 }
 
 void sceneMgr::draw() {
-	pScene->draw();
+	_pScene->draw();
+}
+
+void sceneMgr::changeState(GAME_STATE state) {
+	_state = state;
+	sceneChangeFlag = true;
+}
+
+void sceneMgr::changeScene() {
+	switch (_state)
+	{
+	case GAME_TITLE:
+		_pScene = std::make_shared<title>();
+		break;
+	case GAME_MAIN:
+		_pScene = std::make_shared<gameMgr>();
+		break;
+	case GAME_RESULT:
+		break;
+	case GAME_CONFIG:
+		break;
+	case GAME_EXIT:
+		break;
+	default:
+		break;
+	}
+	sceneChangeFlag = false;
 }

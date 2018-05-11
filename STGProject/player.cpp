@@ -1,8 +1,9 @@
 #include "player.h"
 #include "DxLib.h"
 #include "keyboard.h"
+#include "define.h"
 
-player::player() :_x(100), _y(100) {
+player::player() :_x(WINDOW_W / 2), _y(WINDOW_H) {
 	_img = LoadGraph("img/shot00.png");
 }
 
