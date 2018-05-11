@@ -30,4 +30,5 @@ void gameMgr::draw() {
 	_shot->draw();
 
 	DrawFormatString(define::OUT_W + 50, 50, GetColor(255, 255, 255), "frame:%d", frame);
+	DrawFormatString(define::OUT_W + 50, 100, GetColor(255, 255, 255), "time:%d", frame / 60);
 }
