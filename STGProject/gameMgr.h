@@ -3,19 +3,19 @@
 #include "baseObject.h"
 #include <memory>
 #include "player.h"
+#include "enemy.h"
+#include "bossEnemy.h"
 
 class gameMgr :public baseScene {
 public:
 	gameMgr();
-	~gameMgr();
+	~gameMgr() = default;
 	void update();
 	void draw();
-	static int getCurrentFrame();
 
 private:
 	static int frame;
 	std::shared_ptr<player> _player;
-	baseObject* _shot;
-	baseObject* _enemy;
-	std::shared_ptr<baseObject> _boss;
+	std::shared_ptr<enemy> _enemy;
+	std::shared_ptr<bossEnemy> _boss;
 };
