@@ -12,7 +12,7 @@ gameMgr::gameMgr() {
 	_player = std::make_shared<player>();
 //	_shot = new shot();
 	_enemy = new enemy();
-	_boss = std::make_shared<bossEnemy>(100.f, 100.f);
+	_boss = std::make_shared<bossEnemy>(640.f, 0.f);
 }
 
 gameMgr::~gameMgr() {

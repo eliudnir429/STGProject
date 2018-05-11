@@ -2,25 +2,22 @@
 #include "baseScene.h"
 #include "define.h"
 
-#define MENU_NUM 3
+#define MENU_NUM 4
 
 typedef struct {
 	int x, y;
-	char name[NAME];
+	char name[16];
 
 }titleElements_t;
 
 class title :public baseScene {
 public:
-	title() = default;
+	title();
+	~title() = default;
 	void update();
 	void draw();
 
 private:
-	titleElements_t titleElements[MENU_NUM] = {
-		{ 80,100,"NEW GAME" },
-		{ 100,150,"CONFIG" },
-		{ 100,200,"EXIT" },
-	};
+	titleElements_t titleElements[MENU_NUM];
 	static int selectNum;
 };

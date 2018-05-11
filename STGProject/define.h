@@ -1,15 +1,32 @@
 #pragma once
 
-#define NAME 64
-#define PI 3.141592654f
-#define WINDOW_W 1280
-#define WINDOW_H 720
+class define {
+public:
+	const static int WINDOW_W;
+	const static int WINDOW_H;
 
-enum characterType {
-	TYPE_NONE,
-	TYPE_SHOT,
-	TYPE_PLAYER,
-	TYPE_ENEMY,
-	TYPE_OBJECT,
-	TYPE_NUM,
+	const static int OUT_W;
+	const static int OUT_H;
+	const static int IN_W;
+	const static int IN_H;
+	const static int IN_X;
+	const static int IN_Y;
+
+	const static float PI;
+
+	enum eCharacterType {
+		TYPE_NONE,
+		TYPE_SHOT,
+		TYPE_PLAYER,
+		TYPE_ENEMY,
+		TYPE_OBJECT,
+		TYPE_NUM,
+	};
+
+	enum eTitleParam {
+		NEW_GAME,
+		CONTINUE,
+		CONFIG,
+		EXIT,
+	};
 };

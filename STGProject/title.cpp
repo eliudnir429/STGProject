@@ -5,6 +5,13 @@
 
 int title::selectNum = 0;
 
+title::title() {
+	titleElements[0] = { 80,100,"NEW GAME" };
+	titleElements[1] = { 100,150,"CONTINUE" };
+	titleElements[2] = { 100,200,"CONFIG" };
+	titleElements[3] = { 100,250,"EXIT" };
+}
+
 void title::update() {
 	DrawFormatString(0, 0, GetColor(255, 255, 255), "selectNum[%d]", selectNum);
 

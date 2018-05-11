@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="baseScene.h" />
     <ClInclude Include="baseObject.h" />
+    <ClInclude Include="board.h" />
     <ClInclude Include="bossEnemy.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="enemy.h" />
@@ -150,6 +151,9 @@
     <ClInclude Include="shot.h" />
     <ClInclude Include="systemMain.h" />
     <ClInclude Include="title.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="board.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

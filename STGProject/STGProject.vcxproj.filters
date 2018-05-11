@@ -104,5 +104,13 @@
     <ClInclude Include="bossEnemy.h">
       <Filter>ソース ファイル\game</Filter>
     </ClInclude>
+    <ClInclude Include="board.h">
+      <Filter>ソース ファイル\system</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="board.cpp">
+      <Filter>ソース ファイル\system</Filter>
+    </None>
   </ItemGroup>
 </Project>

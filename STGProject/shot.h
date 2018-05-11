@@ -1,11 +1,6 @@
 #pragma once
 #include "baseObject.h"
 
-typedef struct {
-	int x, y;
-	int width, height;
-}shot_t;
-
 class shot :public baseObject {
 public:
 	shot();
@@ -14,6 +9,8 @@ public:
 	void draw();
 
 private:
-	static shot_t _shot[];
+	float _x, _y;
+	float _angle;
+	float _speed;
 	int _img;
 };

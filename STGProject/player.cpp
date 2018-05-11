@@ -13,7 +13,7 @@ bool player::update() {
 }
 
 void player::draw() const {
-	DrawRotaGraphF(_x, _y, 1.0, 1.0, _img, TRUE);
+	DrawRotaGraphF(_x, _y, 1.0, 0.0, _img, TRUE);
 }
 
 void player::move() {
