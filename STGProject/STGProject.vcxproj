@@ -124,6 +124,7 @@
   <ItemGroup>
     <ClCompile Include="baseScene.cpp" />
     <ClCompile Include="baseObject.cpp" />
+    <ClCompile Include="board.cpp" />
     <ClCompile Include="bossEnemy.cpp" />
     <ClCompile Include="define.cpp" />
     <ClCompile Include="enemy.cpp" />
@@ -134,7 +135,6 @@
     <ClCompile Include="sceneMgr.cpp" />
     <ClCompile Include="shot.cpp" />
     <ClCompile Include="systemMain.cpp" />
-    <ClCompile Include="Task.h" />
     <ClCompile Include="title.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -150,10 +150,8 @@
     <ClInclude Include="sceneMgr.h" />
     <ClInclude Include="shot.h" />
     <ClInclude Include="systemMain.h" />
+    <ClInclude Include="task.h" />
     <ClInclude Include="title.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="board.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

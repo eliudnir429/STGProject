@@ -3,10 +3,10 @@
 const int define::WINDOW_W = 1280;        //ƒEƒBƒ“ƒhƒEƒTƒCƒY‰¡
 const int define::WINDOW_H = 720;        //ƒEƒBƒ“ƒhƒEƒTƒCƒYc
 
-const int define::OUT_W = 896;//ŠO˜g‰¡
-const int define::OUT_H = 960;//ŠO˜gc
-const int define::IN_W = 770;//“à˜g‰¡
-const int define::IN_H = 880;//“à˜gc
+const int define::OUT_W = 820;//ŠO˜g‰¡
+const int define::OUT_H = 720;//ŠO˜gc
+const int define::IN_W = 780;//“à˜g‰¡
+const int define::IN_H = 680;//“à˜gc
 const int define::IN_X = ((OUT_W - IN_W) / 2);//“à˜g‚ÌX
 const int define::IN_Y = ((OUT_H - IN_H) / 2);//“à˜g‚ÌY
 

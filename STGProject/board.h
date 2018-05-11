@@ -1,12 +1,14 @@
 #pragma once
-#include "baseScene.h"
+#include "task.h"
 
-class board :public baseScene {
+class board :public task {
 public:
-	board() = default;
-	~board() = default;
-	void update();
-	void draw();
+	board();
+	virtual ~board() = default;
+	bool update() override;
+	void draw() const override;
+	void drawFrame() const;
 
 private:
+	int _img;
 };

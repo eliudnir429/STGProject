@@ -22,6 +22,9 @@
     <Filter Include="ソース ファイル\scene">
       <UniqueIdentifier>{3246d295-3f9b-4e1b-b742-2efe2e1ed00c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\manager">
+      <UniqueIdentifier>{4dca36ae-223e-44cd-b8ef-2e816d96cc5a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="player.cpp">
@@ -39,9 +42,6 @@
     <ClCompile Include="define.cpp">
       <Filter>ソース ファイル\system</Filter>
     </ClCompile>
-    <ClCompile Include="sceneMgr.cpp">
-      <Filter>ソース ファイル\scene</Filter>
-    </ClCompile>
     <ClCompile Include="baseScene.cpp">
       <Filter>ソース ファイル\scene</Filter>
     </ClCompile>
@@ -54,17 +54,20 @@
     <ClCompile Include="shot.cpp">
       <Filter>ソース ファイル\game</Filter>
     </ClCompile>
-    <ClCompile Include="gameMgr.cpp">
-      <Filter>ソース ファイル\scene</Filter>
-    </ClCompile>
     <ClCompile Include="enemy.cpp">
       <Filter>ソース ファイル\game</Filter>
     </ClCompile>
     <ClCompile Include="bossEnemy.cpp">
       <Filter>ソース ファイル\game</Filter>
     </ClCompile>
-    <ClCompile Include="Task.h">
-      <Filter>ソース ファイル\system</Filter>
+    <ClCompile Include="gameMgr.cpp">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneMgr.cpp">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="board.cpp">
+      <Filter>ソース ファイル\scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,9 +83,6 @@
     <ClInclude Include="player.h">
       <Filter>ソース ファイル\game</Filter>
     </ClInclude>
-    <ClInclude Include="sceneMgr.h">
-      <Filter>ソース ファイル\scene</Filter>
-    </ClInclude>
     <ClInclude Include="systemMain.h">
       <Filter>ソース ファイル\system</Filter>
     </ClInclude>
@@ -95,22 +95,23 @@
     <ClInclude Include="shot.h">
       <Filter>ソース ファイル\game</Filter>
     </ClInclude>
-    <ClInclude Include="gameMgr.h">
-      <Filter>ソース ファイル\scene</Filter>
-    </ClInclude>
     <ClInclude Include="enemy.h">
       <Filter>ソース ファイル\game</Filter>
     </ClInclude>
     <ClInclude Include="bossEnemy.h">
       <Filter>ソース ファイル\game</Filter>
     </ClInclude>
-    <ClInclude Include="board.h">
+    <ClInclude Include="sceneMgr.h">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="gameMgr.h">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="task.h">
       <Filter>ソース ファイル\system</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="board.cpp">
-      <Filter>ソース ファイル\system</Filter>
-    </None>
+    <ClInclude Include="board.h">
+      <Filter>ソース ファイル\scene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

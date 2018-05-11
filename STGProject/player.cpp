@@ -3,7 +3,7 @@
 #include "keyboard.h"
 #include "define.h"
 
-player::player() :_x(WINDOW_W / 2), _y(WINDOW_H) {
+player::player() :_x((float)(define::IN_W / 2.0)), _y((float)define::IN_H) {
 	_img = LoadGraph("img/shot00.png");
 }
 
