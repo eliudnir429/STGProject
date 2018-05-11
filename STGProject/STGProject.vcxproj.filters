@@ -69,6 +69,12 @@
     <ClCompile Include="board.cpp">
       <Filter>ソース ファイル\scene</Filter>
     </ClCompile>
+    <ClCompile Include="enemyMgr.cpp">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="abstractEnemy.cpp">
+      <Filter>ソース ファイル\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="baseScene.h">
@@ -112,6 +118,12 @@
     </ClInclude>
     <ClInclude Include="board.h">
       <Filter>ソース ファイル\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyMgr.h">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="abstractEnemy.h">
+      <Filter>ソース ファイル\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

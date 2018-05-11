@@ -3,7 +3,7 @@
 
 class shot :public baseObject {
 public:
-	shot();
+	shot(float x, float y, float angle, float speed);
 	~shot() = default;
 	void update();
 	void draw();

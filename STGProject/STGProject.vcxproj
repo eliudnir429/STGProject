@@ -122,12 +122,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="abstractEnemy.cpp" />
     <ClCompile Include="baseScene.cpp" />
     <ClCompile Include="baseObject.cpp" />
     <ClCompile Include="board.cpp" />
     <ClCompile Include="bossEnemy.cpp" />
     <ClCompile Include="define.cpp" />
     <ClCompile Include="enemy.cpp" />
+    <ClCompile Include="enemyMgr.cpp" />
     <ClCompile Include="gameMgr.cpp" />
     <ClCompile Include="keyboard.cpp" />
     <ClCompile Include="main.cpp" />
@@ -138,12 +140,14 @@
     <ClCompile Include="title.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="abstractEnemy.h" />
     <ClInclude Include="baseScene.h" />
     <ClInclude Include="baseObject.h" />
     <ClInclude Include="board.h" />
     <ClInclude Include="bossEnemy.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="enemy.h" />
+    <ClInclude Include="enemyMgr.h" />
     <ClInclude Include="gameMgr.h" />
     <ClInclude Include="keyboard.h" />
     <ClInclude Include="player.h" />

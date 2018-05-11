@@ -1,17 +1,8 @@
 #pragma once
-#include "baseObject.h"
+#include "abstractEnemy.h"
 
-class enemy :public baseObject{
+class enemy :public abstractEnemy{
 public:
-	enemy();
-	~enemy() = default;
-	void update();
-	void draw();
-
-private:
-	float _x, _y;
-	float _angle;
-	float _speed;
-	int _img;
-	int _counter;
+	enemy(float	x, float y);
+	virtual ~enemy() = default;
 };

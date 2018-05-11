@@ -1,20 +1,9 @@
 #include "enemy.h"
-#include "DxLib.h"
-#include <math.h>
+#include <DxLib.h>
 #include "define.h"
-#include "gameMgr.h"
 
-enemy::enemy() : _x(200), _y(200), _angle(0.0), _speed(1.5) {
+enemy::enemy(float x, float y) : abstractEnemy(x, y) {
 	_img = LoadGraph("img/enemy00.png");
-}
-
-void enemy::update() {
-	_counter++;
-	_angle = define::PI * 2 / 120 * (_counter % 120);
-	_x += cos(_angle)*_speed;
-	_y += sin(_angle)*_speed;
-}
-
-void enemy::draw() {
-	DrawRotaGraphF(_x, _y, 1.0, 0.0, _img, TRUE);
+	_angle = define::PI / 2.f;
+	_speed = 1.5;
 }
