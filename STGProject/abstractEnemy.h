@@ -12,4 +12,5 @@ protected:
 	float _angle;
 	float _speed;
 	int _img;
+	int _counter;
 };
