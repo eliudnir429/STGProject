@@ -61,7 +61,7 @@ void player::move() {
 }
 
 void player::shoot() {
-	if (keyboardGet(KEY_INPUT_Z) > 0 && _counter % 6 == 0) {
+	if (keyboardGet(KEY_INPUT_Z) > 0 && _counter % 4 == 0) {
 		_list.emplace_back(std::make_shared<shot>(_x, _y));
 	}
 }
