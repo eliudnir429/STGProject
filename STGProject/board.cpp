@@ -16,7 +16,7 @@ void board::draw() const {
 }
 
 void board::drawFrame() const {
-	int color = GetColor(255, 255, 255);
+	int color = GetColor(30, 30, 30);
 	const int x = define::IN_X;
 	const int y = define::IN_Y;
 	const int w = define::IN_W;
