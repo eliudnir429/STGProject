@@ -11,9 +11,12 @@ enemyMgr::enemyMgr() {
 }
 
 bool enemyMgr::update() {
-	for (auto it = _list.begin(); it != _list.end(); it++) {
+	for (auto it = _list.begin(); it != _list.end();) {
 		if ((*it)->update() == false) {
 			it = _list.erase(it);
+		}
+		else {
+			it++;
 		}
 	}
 	return true;

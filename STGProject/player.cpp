@@ -13,8 +13,13 @@ bool player::update() {
 	keyboardUpdate();
 	move();
 	shoot();
-	for (auto it : _list) {
-		it->update();
+	for (auto it = _list.begin(); it != _list.end();) {
+		if ((*it)->update() == false) {
+			it = _list.erase(it);
+		}
+		else {
+			it++;
+		}
 	}
 	return true;
 }
