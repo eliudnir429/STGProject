@@ -124,7 +124,6 @@
   <ItemGroup>
     <ClCompile Include="abstractEnemy.cpp" />
     <ClCompile Include="baseScene.cpp" />
-    <ClCompile Include="baseObject.cpp" />
     <ClCompile Include="board.cpp" />
     <ClCompile Include="bossEnemy.cpp" />
     <ClCompile Include="define.cpp" />
@@ -142,7 +141,6 @@
   <ItemGroup>
     <ClInclude Include="abstractEnemy.h" />
     <ClInclude Include="baseScene.h" />
-    <ClInclude Include="baseObject.h" />
     <ClInclude Include="board.h" />
     <ClInclude Include="bossEnemy.h" />
     <ClInclude Include="define.h" />

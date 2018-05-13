@@ -45,9 +45,6 @@
     <ClCompile Include="baseScene.cpp">
       <Filter>ソース ファイル\scene</Filter>
     </ClCompile>
-    <ClCompile Include="baseObject.cpp">
-      <Filter>ソース ファイル\game</Filter>
-    </ClCompile>
     <ClCompile Include="title.cpp">
       <Filter>ソース ファイル\scene</Filter>
     </ClCompile>
@@ -91,9 +88,6 @@
     </ClInclude>
     <ClInclude Include="systemMain.h">
       <Filter>ソース ファイル\system</Filter>
-    </ClInclude>
-    <ClInclude Include="baseObject.h">
-      <Filter>ソース ファイル\game</Filter>
     </ClInclude>
     <ClInclude Include="title.h">
       <Filter>ソース ファイル\scene</Filter>

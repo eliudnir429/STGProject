@@ -1,12 +1,12 @@
 #pragma once
-#include "baseObject.h"
+#include "task.h"
 
-class shot :public baseObject {
+class shot :public task {
 public:
-	shot(float x, float y, float angle, float speed);
+	shot(float x, float y);
 	~shot() = default;
-	void update();
-	void draw();
+	bool update() override;
+	void draw() const override;
 
 private:
 	float _x, _y;
