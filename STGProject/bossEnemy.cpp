@@ -5,6 +5,7 @@
 
 bossEnemy::bossEnemy(float x, float y) : abstractEnemy(x, y) {
 	_img = LoadGraph("img/enemy01.png");
+	getSize();
 	_angle = define::PI / 2.f;
 	_speed = 2.f;
 }
@@ -24,5 +25,5 @@ bool bossEnemy::update() {
 	}
 	_x += (float)cos(_angle)*_speed;
 	_y += (float)sin(_angle)*_speed;
-	return true;
+	return isInside();
 }

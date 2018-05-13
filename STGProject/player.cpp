@@ -20,6 +20,7 @@ bool player::update() {
 }
 
 void player::draw() const {
+	DrawFormatString(define::OUT_W + 50, 200, GetColor(255, 255, 255), "shot : %d", _list.size());
 	if (keyboardGet(KEY_INPUT_RIGHT) > 0) {
 		DrawRotaGraphF(_x, _y, 1.0, 0.0, _img[10], TRUE);
 	}
