@@ -4,7 +4,7 @@
 #include "board.h"
 #include "player.h"
 #include "enemyMgr.h"
-#include "shot.h"
+#include "pShotMgr.h"
 
 class gameMgr :public baseScene {
 public:
@@ -18,5 +18,5 @@ private:
 	std::shared_ptr<board> _board;
 	std::shared_ptr<player> _player;
 	std::shared_ptr<enemyMgr> _enemyMgr;
-	std::shared_ptr<shot> _shot;
+	std::shared_ptr<pShotMgr> _pShotMgr;
 };

@@ -6,6 +6,7 @@
 player::player() :_x((float)(define::IN_W / 2.0)), _y((float)define::IN_H) {
 	LoadDivGraph("img/player00.png", 16, 4, 4, 64, 64, _img, TRUE);
 	_counter = 0;
+	_pShotMgr = std::make_shared<pShotMgr>();
 }
 
 bool player::update() {
@@ -13,19 +14,12 @@ bool player::update() {
 	keyboardUpdate();
 	move();
 	shoot();
-	for (auto it = _list.begin(); it != _list.end();) {
-		if ((*it)->update() == false) {
-			it = _list.erase(it);
-		}
-		else {
-			it++;
-		}
-	}
+	_pShotMgr->update();
+
 	return true;
 }
 
 void player::draw() const {
-	DrawFormatString(define::OUT_W + 50, 200, GetColor(255, 255, 255), "shot : %d", _list.size());
 	if (keyboardGet(KEY_INPUT_RIGHT) > 0) {
 		DrawRotaGraphF(_x, _y, 1.0, 0.0, _img[10], TRUE);
 	}
@@ -35,25 +29,22 @@ void player::draw() const {
 	else {
 		DrawRotaGraphF(_x, _y, 1.0, 0.0, _img[8], TRUE);
 	}
-	for (auto it : _list) {
-		it->draw();
-	}
-
+	_pShotMgr->draw();
 }
 
 void player::move() {
 	float moveX = 0, moveY = 0;
 
-	if (keyboardGet(KEY_INPUT_UP) > 0) {
+	if (keyboardGet(KEY_INPUT_UP) > 0 && _y > define::IN_Y) {
 		moveY -= 5;
 	}
-	if (keyboardGet(KEY_INPUT_DOWN) > 0) {
+	if (keyboardGet(KEY_INPUT_DOWN) > 0 && _y < define::IN_H) {
 		moveY += 5;
 	}
-	if (keyboardGet(KEY_INPUT_RIGHT) > 0) {
+	if (keyboardGet(KEY_INPUT_RIGHT) > 0 && _x < define::IN_W) {
 		moveX += 5;
 	}
-	if (keyboardGet(KEY_INPUT_LEFT) > 0) {
+	if (keyboardGet(KEY_INPUT_LEFT) > 0 && _x > define::IN_X) {
 		moveX -= 5;
 	}
 	_x += moveX;
@@ -62,6 +53,6 @@ void player::move() {
 
 void player::shoot() {
 	if (keyboardGet(KEY_INPUT_Z) > 0 && _counter % 4 == 0) {
-		_list.emplace_back(std::make_shared<shot>(_x, _y));
+		_pShotMgr->makeShot(_x, _y);
 	}
 }

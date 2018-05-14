@@ -3,16 +3,16 @@
 #include "define.h"
 #include <math.h>
 
-bossEnemy::bossEnemy(float x, float y) : abstractEnemy(x, y) {
+bossEnemy::bossEnemy(float x, float y) : abstractEnemy(x, y){
 	_img = LoadGraph("img/enemy01.png");
 	getSize();
 	_angle = define::PI / 2.f;
 	_speed = 2.f;
+	_hitRad = 50.f;
 }
 
 bool bossEnemy::update() {
 	_counter++;
-
 	if (_counter <= 120) {
 		
 	}

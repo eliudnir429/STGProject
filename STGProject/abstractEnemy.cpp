@@ -38,3 +38,9 @@ bool abstractEnemy::isInside() {
 	}
 	return true;
 }
+
+void abstractEnemy::getCollisionArea(float& x, float& y, float& rad) {
+	x = _x;
+	y = _y;
+	rad = _hitRad;
+}

@@ -8,7 +8,6 @@ gameMgr::gameMgr() {
 	_board = std::make_shared<board>();
 	_player = std::make_shared<player>();
 	_enemyMgr = std::make_shared<enemyMgr>();
-//	_shot = std::make_shared<shot>();
 }
 
 void gameMgr::update() {
@@ -17,14 +16,12 @@ void gameMgr::update() {
 	_board->update();
 	_player->update();
 	_enemyMgr->update();
-//	_shot->update();
 }
 
 void gameMgr::draw() {
 	_board->draw();
 	_player->draw();
 	_enemyMgr->draw();
-//	_shot->draw();
 
 	DrawFormatString(define::OUT_W + 50, 50, GetColor(255, 255, 255), "frame:%d", frame);
 	DrawFormatString(define::OUT_W + 50, 100, GetColor(255, 255, 255), "time:%d", frame / 60);
