@@ -126,7 +126,6 @@
     <ClCompile Include="baseScene.cpp" />
     <ClCompile Include="board.cpp" />
     <ClCompile Include="bossEnemy.cpp" />
-    <ClCompile Include="collisionJud.cpp" />
     <ClCompile Include="define.cpp" />
     <ClCompile Include="effect.cpp" />
     <ClCompile Include="enemy.cpp" />
@@ -146,7 +145,6 @@
     <ClInclude Include="baseScene.h" />
     <ClInclude Include="board.h" />
     <ClInclude Include="bossEnemy.h" />
-    <ClInclude Include="collisionJud.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="effect.h" />
     <ClInclude Include="enemy.h" />

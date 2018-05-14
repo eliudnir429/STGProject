@@ -11,7 +11,6 @@ public:
 	virtual ~enemyMgr() = default;
 	bool update() override;
 	void draw() const override;
-private:
 	std::list<std::shared_ptr<abstractEnemy>> _list;
-	std::list<std::shared_ptr<effect>> _eList;
+private:
 };

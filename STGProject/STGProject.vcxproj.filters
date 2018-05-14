@@ -78,9 +78,6 @@
     <ClCompile Include="pShotMgr.cpp">
       <Filter>ソース ファイル\manager</Filter>
     </ClCompile>
-    <ClCompile Include="collisionJud.cpp">
-      <Filter>ソース ファイル\game</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="baseScene.h">
@@ -133,9 +130,6 @@
     </ClInclude>
     <ClInclude Include="pShotMgr.h">
       <Filter>ソース ファイル\manager</Filter>
-    </ClInclude>
-    <ClInclude Include="collisionJud.h">
-      <Filter>ソース ファイル\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

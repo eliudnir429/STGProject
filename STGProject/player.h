@@ -2,7 +2,7 @@
 #include "task.h"
 #include <memory>
 #include <list>
-#include "pShotMgr.h"
+//#include "pShotMgr.h"
 
 class player :public task {
 public:
@@ -10,11 +10,12 @@ public:
 	virtual ~player() = default;
 	bool update();
 	void draw() const override;
+	bool isShoot();
+	void getPosition(float& x, float& y);
 private:
 	void move();
-	void shoot();
 	float _x, _y;
 	int _img[16];
 	int _counter;
-	std::shared_ptr<pShotMgr> _pShotMgr;
+//	std::shared_ptr<pShotMgr> _psm;
 };

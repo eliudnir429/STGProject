@@ -6,16 +6,17 @@
 player::player() :_x((float)(define::IN_W / 2.0)), _y((float)define::IN_H) {
 	LoadDivGraph("img/player00.png", 16, 4, 4, 64, 64, _img, TRUE);
 	_counter = 0;
-	_pShotMgr = std::make_shared<pShotMgr>();
+//	_psm = std::make_shared<pShotMgr>();
 }
 
 bool player::update() {
 	_counter++;
 	keyboardUpdate();
 	move();
-	shoot();
-	_pShotMgr->update();
-
+/*	if (isShoot()) {
+		_psm->makeShot(_x, _y);
+	}*/
+//	_psm->update();
 	return true;
 }
 
@@ -29,7 +30,7 @@ void player::draw() const {
 	else {
 		DrawRotaGraphF(_x, _y, 1.0, 0.0, _img[8], TRUE);
 	}
-	_pShotMgr->draw();
+//	_psm->draw();
 }
 
 void player::move() {
@@ -51,8 +52,14 @@ void player::move() {
 	_y += moveY;
 }
 
-void player::shoot() {
+bool player::isShoot() {
 	if (keyboardGet(KEY_INPUT_Z) > 0 && _counter % 4 == 0) {
-		_pShotMgr->makeShot(_x, _y);
+		return true;
 	}
+	return false;
+}
+
+void player::getPosition(float& x, float& y) {
+	x = _x;
+	y = _y;
 }
