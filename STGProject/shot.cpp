@@ -19,8 +19,7 @@ bool shot::update() {
 }
 
 void shot::draw() const {
-	DrawRotaGraphF(_x + 25, _y - 10, 0.5, 0.0, _img, TRUE);
-	DrawRotaGraphF(_x - 25, _y - 10, 0.5, 0.0, _img, TRUE);
+	DrawRotaGraphF(_x, _y, 0.5, 0.0, _img, TRUE);
 }
 
 bool shot::isInside() {

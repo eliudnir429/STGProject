@@ -12,7 +12,8 @@ pShotMgr::pShotMgr(const std::shared_ptr<player>& player,
 bool pShotMgr::update() {
 	if (_player->isShoot()) {
 		_player->getPosition(_playerX, _playerY);
-		_list.emplace_back(std::make_shared<shot>(_playerX, _playerY));
+		_list.emplace_back(std::make_shared<shot>(_playerX + 25, _playerY - 10));
+		_list.emplace_back(std::make_shared<shot>(_playerX - 25, _playerY - 10));
 	}
 
 	for (auto it = _list.begin(); it != _list.end();) {	
