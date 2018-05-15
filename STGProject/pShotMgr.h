@@ -2,7 +2,7 @@
 #include "task.h"
 #include <list>
 #include <memory>
-#include "shot.h"
+#include "playerShot.h"
 #include "player.h"
 #include "enemyMgr.h"
 #include "effectMgr.h"
@@ -16,7 +16,7 @@ public:
 	void draw() const override;
 	bool isHit();
 private:
-	std::list<std::shared_ptr<shot>> _list;
+	std::list<std::shared_ptr<playerShot>> _list;
 	std::shared_ptr<player> _player;
 	std::shared_ptr<enemyMgr> _enemyMgr;
 	std::shared_ptr<effectMgr> _effectMgr;

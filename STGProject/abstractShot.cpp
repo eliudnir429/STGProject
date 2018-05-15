@@ -1,16 +1,16 @@
-#include "shot.h"
+#include "abstractShot.h"
 #include <DxLib.h>
 #include "define.h"
 #include <math.h>
 
-shot::shot(float x, float y) :_x(x), _y(y), _angle(define::PI / 2.f*3.f), _speed(16.f) {
-	_img = LoadGraph("img/shot00.png");
-	GetGraphSize(_img, &_width, &_height);
-	_counter = 0;
-	_hitRad = 50.f;
+abstractShot::abstractShot(float x, float y) :
+	_x(0.f),
+	_y(0.f),
+	_angle(0.f),
+	_speed(0.f) {
 }
 
-bool shot::update() {
+bool abstractShot::update() {
 	_counter++;
 
 	_x += (float)cos(_angle)*_speed;
@@ -18,11 +18,11 @@ bool shot::update() {
 	return isInside();
 }
 
-void shot::draw() const {
+void abstractShot::draw() const {
 	DrawRotaGraphF(_x, _y, 0.5, 0.0, _img, TRUE);
 }
 
-bool shot::isInside() {
+bool abstractShot::isInside() {
 	if (_counter < 60) {
 		return true;
 	}
@@ -35,7 +35,7 @@ bool shot::isInside() {
 	return true;
 }
 
-void shot::getCollisionArea(float& x, float& y, float& rad) {
+void abstractShot::getCollisionArea(float& x, float& y, float& rad) {
 	x = _x;
 	y = _y;
 	rad = _hitRad;

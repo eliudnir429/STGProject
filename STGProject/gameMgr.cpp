@@ -9,6 +9,8 @@ gameMgr::gameMgr() {
 	_player = std::make_shared<player>();
 	_enemyMgr = std::make_shared<enemyMgr>();
 	_pShotMgr = std::make_shared<pShotMgr>(_player, _enemyMgr);
+	_effectMgr = std::make_shared<effectMgr>();
+	_collisionDetect = std::make_shared<collisionDetect>(_player,_enemyMgr,_pShotMgr,_effectMgr);
 }
 
 void gameMgr::update() {
@@ -18,6 +20,7 @@ void gameMgr::update() {
 	_player->update();
 	_enemyMgr->update();
 	_pShotMgr->update();
+	_effectMgr->update();
 }
 
 void gameMgr::draw() {
@@ -25,6 +28,7 @@ void gameMgr::draw() {
 	_player->draw();
 	_enemyMgr->draw();
 	_pShotMgr->draw();
+	_effectMgr->draw();
 
 	DrawFormatString(define::OUT_W + 50, 50, GetColor(255, 255, 255), "frame:%d", frame);
 	DrawFormatString(define::OUT_W + 50, 100, GetColor(255, 255, 255), "time:%d", frame / 60);

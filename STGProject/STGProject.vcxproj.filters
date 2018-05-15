@@ -48,9 +48,6 @@
     <ClCompile Include="title.cpp">
       <Filter>ソース ファイル\scene</Filter>
     </ClCompile>
-    <ClCompile Include="shot.cpp">
-      <Filter>ソース ファイル\game</Filter>
-    </ClCompile>
     <ClCompile Include="enemy.cpp">
       <Filter>ソース ファイル\game</Filter>
     </ClCompile>
@@ -81,6 +78,15 @@
     <ClCompile Include="effectMgr.cpp">
       <Filter>ソース ファイル\manager</Filter>
     </ClCompile>
+    <ClCompile Include="collisionDetect.cpp">
+      <Filter>ソース ファイル\game</Filter>
+    </ClCompile>
+    <ClCompile Include="abstractShot.cpp">
+      <Filter>ソース ファイル\game</Filter>
+    </ClCompile>
+    <ClCompile Include="playerShot.cpp">
+      <Filter>ソース ファイル\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="baseScene.h">
@@ -100,9 +106,6 @@
     </ClInclude>
     <ClInclude Include="title.h">
       <Filter>ソース ファイル\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="shot.h">
-      <Filter>ソース ファイル\game</Filter>
     </ClInclude>
     <ClInclude Include="enemy.h">
       <Filter>ソース ファイル\game</Filter>
@@ -136,6 +139,15 @@
     </ClInclude>
     <ClInclude Include="effectMgr.h">
       <Filter>ソース ファイル\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="collisionDetect.h">
+      <Filter>ソース ファイル\game</Filter>
+    </ClInclude>
+    <ClInclude Include="abstractShot.h">
+      <Filter>ソース ファイル\game</Filter>
+    </ClInclude>
+    <ClInclude Include="playerShot.h">
+      <Filter>ソース ファイル\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

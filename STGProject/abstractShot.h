@@ -1,10 +1,10 @@
 #pragma once
 #include "task.h"
 
-class shot :public task {
+class abstractShot :public task {
 public:
-	shot(float x, float y);
-	~shot() = default;
+	abstractShot(float x, float y);
+	~abstractShot() = default;
 	bool update() override;
 	void draw() const override;
 	bool isInside();

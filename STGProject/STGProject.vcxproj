@@ -123,9 +123,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="abstractEnemy.cpp" />
+    <ClCompile Include="abstractShot.cpp" />
     <ClCompile Include="baseScene.cpp" />
     <ClCompile Include="board.cpp" />
     <ClCompile Include="bossEnemy.cpp" />
+    <ClCompile Include="collisionDetect.cpp" />
     <ClCompile Include="define.cpp" />
     <ClCompile Include="effect.cpp" />
     <ClCompile Include="effectMgr.cpp" />
@@ -137,15 +139,17 @@
     <ClCompile Include="player.cpp" />
     <ClCompile Include="pShotMgr.cpp" />
     <ClCompile Include="sceneMgr.cpp" />
-    <ClCompile Include="shot.cpp" />
+    <ClCompile Include="playerShot.cpp" />
     <ClCompile Include="systemMain.cpp" />
     <ClCompile Include="title.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abstractEnemy.h" />
+    <ClInclude Include="abstractShot.h" />
     <ClInclude Include="baseScene.h" />
     <ClInclude Include="board.h" />
     <ClInclude Include="bossEnemy.h" />
+    <ClInclude Include="collisionDetect.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="effect.h" />
     <ClInclude Include="effectMgr.h" />
@@ -156,7 +160,7 @@
     <ClInclude Include="player.h" />
     <ClInclude Include="pShotMgr.h" />
     <ClInclude Include="sceneMgr.h" />
-    <ClInclude Include="shot.h" />
+    <ClInclude Include="playerShot.h" />
     <ClInclude Include="systemMain.h" />
     <ClInclude Include="task.h" />
     <ClInclude Include="title.h" />
