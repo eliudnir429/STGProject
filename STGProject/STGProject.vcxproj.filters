@@ -78,6 +78,9 @@
     <ClCompile Include="pShotMgr.cpp">
       <Filter>ソース ファイル\manager</Filter>
     </ClCompile>
+    <ClCompile Include="effectMgr.cpp">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="baseScene.h">
@@ -129,6 +132,9 @@
       <Filter>ソース ファイル\game</Filter>
     </ClInclude>
     <ClInclude Include="pShotMgr.h">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="effectMgr.h">
       <Filter>ソース ファイル\manager</Filter>
     </ClInclude>
   </ItemGroup>

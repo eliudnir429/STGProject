@@ -12,9 +12,13 @@ bool effect::update() {
 	if (_counter % 3 == 0) {
 		_imgNum++;
 	}
+
+	if (_imgNum >= 11) {
+		return false;
+	}
 	return true;
 }
 
 void effect::draw() const {
-	DrawRotaGraphF(_x, _y, 1.0, 0.0, _img[_imgNum % 11], TRUE);
+	DrawRotaGraphF(_x, _y, 1.0, 0.0, _img[_imgNum], TRUE);
 }
