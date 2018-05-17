@@ -1,7 +1,7 @@
 #include "enemyMgr.h"
 #include "define.h"
-#include "enemy.h"
 #include "bossEnemy.h"
+#include "enemy.h"
 #include <DxLib.h>
 
 enemyMgr::enemyMgr() {

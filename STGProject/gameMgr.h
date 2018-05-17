@@ -1,6 +1,5 @@
 #pragma once
-#include "baseScene.h"
-#include <memory>
+#include "task.h"
 #include "board.h"
 #include "player.h"
 #include "enemyMgr.h"
@@ -8,12 +7,12 @@
 #include "effectMgr.h"
 #include "collisionDetect.h"
 
-class gameMgr :public baseScene {
+class gameMgr :public task {
 public:
 	gameMgr();
 	~gameMgr() = default;
-	void update();
-	void draw();
+	bool update() override;
+	void draw() const override;
 
 private:
 	static int frame;

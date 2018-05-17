@@ -3,7 +3,6 @@
 #include <list>
 #include <memory>
 #include "abstractEnemy.h"
-#include "effect.h"
 
 class enemyMgr :public task {
 public:

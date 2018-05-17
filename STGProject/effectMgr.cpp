@@ -21,6 +21,6 @@ void effectMgr::draw() const {
 	}
 }
 
-void effectMgr::addList(float x, float y) {
+void effectMgr::makeEffect(float x, float y) {
 	_list.emplace_back(std::make_shared<effect>(x, y));
 }

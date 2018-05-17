@@ -1,11 +1,11 @@
 #pragma once
 #include "task.h"
-#include <list>
 #include <memory>
-#include "playerShot.h"
+#include <list>
 #include "player.h"
 #include "enemyMgr.h"
-#include "effectMgr.h"
+#include "playerShot.h"
+#include "collisionDetect.h"
 
 class pShotMgr :public task {
 public:
@@ -15,13 +15,11 @@ public:
 	bool update();
 	void draw() const override;
 	bool isHit();
+	void makeShot();
 private:
 	std::list<std::shared_ptr<playerShot>> _list;
 	std::shared_ptr<player> _player;
 	std::shared_ptr<enemyMgr> _enemyMgr;
-	std::shared_ptr<effectMgr> _effectMgr;
+//	std::shared_ptr<collisionDetect> _collisionDetect;
 	float _playerX, _playerY;
-	float _shotX, _shotY, _shotRad;
-	float _enemyX, _enemyY, _enemyRad;
-	float _hitX, _hitY, _hitRad;
 };

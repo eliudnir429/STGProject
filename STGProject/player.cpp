@@ -1,7 +1,7 @@
 #include "player.h"
-#include "DxLib.h"
-#include "keyboard.h"
 #include "define.h"
+#include <DxLib.h>
+#include "keyboard.h"
 
 player::player() :_x((float)(define::IN_W / 2.0)), _y((float)define::IN_H) {
 	LoadDivGraph("img/player00.png", 16, 4, 4, 64, 64, _img, TRUE);

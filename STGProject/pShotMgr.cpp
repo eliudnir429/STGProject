@@ -1,40 +1,26 @@
 #include "pShotMgr.h"
 #include <DxLib.h>
 #include "define.h"
-#include "collisionDetect.h"
 
 pShotMgr::pShotMgr(const std::shared_ptr<player>& player,
 				const std::shared_ptr<enemyMgr>& enemyMgr) {
-	_effectMgr = std::make_shared<effectMgr>();
 	_player = player;
 	_enemyMgr = enemyMgr;
 }
 
 bool pShotMgr::update() {
-	if (_player->isShoot()) {
-		_player->getPosition(_playerX, _playerY);
-		_list.emplace_back(std::make_shared<playerShot>(_playerX + 25, _playerY - 10));
-		_list.emplace_back(std::make_shared<playerShot>(_playerX - 25, _playerY - 10));
-	}
+	makeShot();
 	
-	for (auto itShot = _list.begin(); itShot != _list.end();) {
-
-		if ((*itShot)->update() == false) {
-			itShot = _list.erase(itShot);
-			continue;
+	for (auto it = _list.begin(); it != _list.end();) {
+		
+		if (_collisionDetect->isHitPlayerShot(*it) || (*it)->update()) {
+			it = _list.erase(it);
 		}
 		else {
-			itShot++;
-		}
-
-		for (auto itEnemy = _enemyMgr->_list.begin(); itEnemy != _list.end();) {
-
-			if (collisionDetect::isHitPlayerShot(*itShot, *itEnemy)) {
-				_effectMgr->addList(_shotX, _shotY);
-				itShot = _list.erase(itShot);
-			}
+			it++;
 		}
 	}
+
 	/*
 	for (auto it = _list.begin(); it != _list.end();) {	
 		if ((*it)->update() == false ) {	//Á‹Žˆ— Õ“Ë”»’è
@@ -57,23 +43,12 @@ void pShotMgr::draw() const {
 	for (auto it : _list) {
 		it->draw();
 	}
-	_effectMgr->draw();
 }
 
-bool pShotMgr::isHit() {
-	for (auto it : _list) {
-		it->getCollisionArea(_shotX, _shotY, _shotRad);
-
-		for (auto it2 : _enemyMgr->_list) {
-			it2->getCollisionArea(_enemyX, _enemyY, _enemyRad);
-			_hitX = _shotX - _enemyX;
-			_hitY = _shotY - _enemyY;
-			_hitRad = _shotRad + _enemyRad;
-
-			if ((_hitX*_hitX) + (_hitY*_hitY) < (_shotRad*_shotRad)) {
-				return true;
-			}
-		}
+void pShotMgr::makeShot() {
+	if (_player->isShoot()) {
+		_player->getPosition(_playerX, _playerY);
+		_list.emplace_back(std::make_shared<playerShot>(_playerX + 25, _playerY - 10));
+		_list.emplace_back(std::make_shared<playerShot>(_playerX - 25, _playerY - 10));
 	}
-	return false;
 }

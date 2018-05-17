@@ -1,5 +1,5 @@
 #include "gameMgr.h"
-#include "DxLib.h"
+#include <DxLib.h>
 #include "define.h"
 
 int gameMgr::frame = 0;
@@ -13,7 +13,7 @@ gameMgr::gameMgr() {
 	_collisionDetect = std::make_shared<collisionDetect>(_player,_enemyMgr,_pShotMgr,_effectMgr);
 }
 
-void gameMgr::update() {
+bool gameMgr::update() {
 	frame++;
 	
 	_board->update();
@@ -21,9 +21,10 @@ void gameMgr::update() {
 	_enemyMgr->update();
 	_pShotMgr->update();
 	_effectMgr->update();
+	return true;
 }
 
-void gameMgr::draw() {
+void gameMgr::draw() const {
 	_board->draw();
 	_player->draw();
 	_enemyMgr->draw();

@@ -12,19 +12,22 @@ bool collisionDetect::update() {
 	return true;
 }
 
-bool collisionDetect::isHitPlayerShot(std::shared_ptr<abstractShot> shot,std::shared_ptr<abstractEnemy> object) {
-	float _shotX, _shotY, _shotRad;
-	float _objectX, _objectY, _objectRad;
-	float _x, _y, _rad;
+void collisionDetect::draw() const {
 
+}
+
+bool collisionDetect::isHitPlayerShot(std::shared_ptr<abstractShot> shot) {
 	shot->getCollisionArea(_shotX, _shotY, _shotRad);
-	object->getCollisionArea(_objectX, _objectY, _objectRad);
-	_x = _shotX - _objectX;
-	_y = _shotY - _objectY;
-	_rad = _shotRad + _objectRad;
 
-	if ((_x*_x) + (_y*_y) <= (_rad*_rad)) {
-		return true;
+	for (auto it : _enemyMgr->_list) {
+		it->getCollisionArea(_objectX, _objectY, _objectRad);
+		_x = _shotX - _objectX;
+		_y = _shotY - _objectY;
+		_rad = _shotRad + _objectRad;
+		
+		if ((_x*_x) + (_y*_y) <= (_rad*_rad)) {
+			return true;
+		}
 	}
 	return false;
 }

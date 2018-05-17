@@ -10,7 +10,7 @@ public:
 	virtual ~effectMgr() = default;
 	bool update();
 	void draw() const;
-	void addList(float x, float y);
+	void makeEffect(float x, float y);
 private:
 	std::list<std::shared_ptr<effect>> _list;
 };

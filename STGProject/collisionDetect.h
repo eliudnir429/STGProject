@@ -6,12 +6,13 @@
 #include "pShotMgr.h"
 #include "effectMgr.h"
 
-class collisionDetect {
+class collisionDetect :public task {
 public:
 	collisionDetect(const std::shared_ptr<player>& player, const std::shared_ptr<enemyMgr>& enemyMgr, const std::shared_ptr<pShotMgr>& pShotMgr, const std::shared_ptr<effectMgr>& effectMgr);
-	~collisionDetect() = default;
+	virtual ~collisionDetect() = default;
 	bool update();
-	static bool isHitPlayerShot(std::shared_ptr<abstractShot> shot,std::shared_ptr<abstractEnemy> object);
+	void draw() const;
+	bool isHitPlayerShot(std::shared_ptr<abstractShot> shot);
 private:
 	std::shared_ptr<player> _player;
 	std::shared_ptr<enemyMgr> _enemyMgr;

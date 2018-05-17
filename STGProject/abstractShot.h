@@ -9,8 +9,7 @@ public:
 	void draw() const override;
 	bool isInside();
 	void getCollisionArea(float& x, float& y, float& rad);
-
-private:
+protected:
 	float _x, _y;
 	float _angle;
 	float _speed;
