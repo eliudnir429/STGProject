@@ -8,8 +8,6 @@ public:
 	bool update() override;
 	void draw() const override;
 	bool isInside();
-	void getCollisionArea(float& x, float& y, float& rad);
-
 private:
 	float _x, _y;
 	float _angle;

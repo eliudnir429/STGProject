@@ -3,14 +3,14 @@
 #include <DxLib.h>
 #include "define.h"
 
-abstractEnemy::abstractEnemy(float x, float y) :
-	_x(x),
-	_y(y),
-	_angle(0.0),
-	_speed(0.0),
-	_counter(0),
-	_width(0),
-	_height(0)
+abstractEnemy::abstractEnemy(float x, float y) :_x(x),
+												_y(y),
+												_angle(0.0),
+												_speed(0.0),
+												_counter(0),
+												_width(0),
+												_height(0),
+												_hitRad(0.0)
 {
 }
 

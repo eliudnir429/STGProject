@@ -3,7 +3,11 @@
 #include "define.h"
 #include <math.h>
 
-playerShot::playerShot(float x, float y) :abstractShot(x, y), _x(x), _y(y), _angle(define::PI / 2.f*3.f), _speed(16.f) {
+playerShot::playerShot(float x, float y) :abstractShot(x, y),
+										_x(x),
+										_y(y),
+										_angle(define::PI / 2.f*3.f),
+										_speed(16.f){
 	_img = LoadGraph("img/shot00.png");
 	GetGraphSize(_img, &_width, &_height);
 	_counter = 0;
@@ -33,10 +37,4 @@ bool playerShot::isInside() {
 		return false;
 	}
 	return true;
-}
-
-void playerShot::getCollisionArea(float& x, float& y, float& rad) {
-	x = _x;
-	y = _y;
-	rad = _hitRad;
 }

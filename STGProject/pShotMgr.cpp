@@ -12,43 +12,21 @@ pShotMgr::pShotMgr(const std::shared_ptr<player>& player,
 
 bool pShotMgr::update() {
 	if (_player->isShoot()) {
-		_player->getPosition(_playerX, _playerY);
-		_list.emplace_back(std::make_shared<playerShot>(_playerX + 25, _playerY - 10));
-		_list.emplace_back(std::make_shared<playerShot>(_playerX - 25, _playerY - 10));
+		makeShot(_player);
 	}
 	
-	for (auto itShot = _list.begin(); itShot != _list.end();) {
+	for (auto it = _list.begin(); it != _list.end();) {
 
-		if ((*itShot)->update() == false) {
-			itShot = _list.erase(itShot);
-			continue;
-		}
-		else {
-			itShot++;
-		}
-
-		for (auto itEnemy = _enemyMgr->_list.begin(); itEnemy != _list.end();) {
-
-			if (collisionDetect::isHitPlayerShot(*itShot, *itEnemy)) {
-				_effectMgr->addList(_shotX, _shotY);
-				itShot = _list.erase(itShot);
-			}
-		}
-	}
-	/*
-	for (auto it = _list.begin(); it != _list.end();) {	
-		if ((*it)->update() == false ) {	//消去処理 衝突判定
+		if ((*it)->update() == false) {
 			it = _list.erase(it);
 		}
-		else if (collisionDetect::isHitPlayerShot(it,)) {			//ヒットエフェクト
-			_effectMgr->addList(_shotX, _shotY);
+		else if (isHit(*it)) {
 			it = _list.erase(it);
 		}
 		else {
 			it++;
 		}
 	}
-	_effectMgr->update();*/
 	return true;
 }
 
@@ -57,23 +35,35 @@ void pShotMgr::draw() const {
 	for (auto it : _list) {
 		it->draw();
 	}
-	_effectMgr->draw();
 }
 
-bool pShotMgr::isHit() {
-	for (auto it : _list) {
-		it->getCollisionArea(_shotX, _shotY, _shotRad);
+bool pShotMgr::isHit(std::shared_ptr<playerShot> shot) {
+	float _shotX, _shotY, _shotRad;
+	float _enemyX, _enemyY, _enemyRad;
+	float _hitX, _hitY, _hitRad;
 
-		for (auto it2 : _enemyMgr->_list) {
-			it2->getCollisionArea(_enemyX, _enemyY, _enemyRad);
-			_hitX = _shotX - _enemyX;
-			_hitY = _shotY - _enemyY;
-			_hitRad = _shotRad + _enemyRad;
+	shot->getCollisionArea(_shotX, _shotY, _shotRad);
+	DrawFormatString(0, 200, GetColor(255, 255, 255), "%f %f %f", _shotX, _shotY, _shotRad);
 
-			if ((_hitX*_hitX) + (_hitY*_hitY) < (_shotRad*_shotRad)) {
-				return true;
-			}
+	for (auto it : _enemyMgr->_list) {
+		it->getCollisionArea(_enemyX, _enemyY, _enemyRad);
+		DrawFormatString(0, 250, GetColor(255, 255, 255), "%f %f %f", _enemyX, _enemyY, _enemyRad);
+
+		_hitX = _shotX - _enemyX;
+		_hitY = _shotY - _enemyY;
+		_hitRad = _shotRad + _enemyRad;
+
+		if ((_hitX*_hitX) + (_hitY*_hitY) <= (_hitRad*_hitRad)) {
+			return true;
 		}
 	}
 	return false;
+}
+
+void pShotMgr::makeShot(std::shared_ptr<player> player) {
+	float playerX, playerY;
+
+	player->getPosition(playerX, playerY);
+	_list.emplace_back(std::make_shared<playerShot>(playerX + 25, playerY - 10));
+	_list.emplace_back(std::make_shared<playerShot>(playerX - 25, playerY - 10));
 }
