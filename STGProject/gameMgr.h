@@ -5,14 +5,13 @@
 #include "enemyMgr.h"
 #include "pShotMgr.h"
 #include "effectMgr.h"
-#include "collisionDetect.h"
 
 class gameMgr :public task {
 public:
 	gameMgr();
 	~gameMgr() = default;
-	bool update() override;
-	void draw() const override;
+	bool update();
+	void draw() const;
 
 private:
 	static int frame;
@@ -21,5 +20,4 @@ private:
 	std::shared_ptr<enemyMgr> _enemyMgr;
 	std::shared_ptr<pShotMgr> _pShotMgr;
 	std::shared_ptr<effectMgr> _effectMgr;
-	std::shared_ptr<collisionDetect> _collisionDetect;
 };

@@ -1,6 +1,6 @@
 #pragma once
-#include "baseScene.h"
 #include <memory>
+#include "task.h"
 
 enum GAME_STATE {
 	GAME_TITLE,
@@ -22,5 +22,5 @@ public:
 private:
 	static GAME_STATE _state;
 	static bool sceneChangeFlag;
-	std::shared_ptr<baseScene> _pScene;
+	std::shared_ptr<task> _pScene;
 };

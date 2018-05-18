@@ -124,7 +124,6 @@
   <ItemGroup>
     <ClCompile Include="abstractEnemy.cpp" />
     <ClCompile Include="abstractShot.cpp" />
-    <ClCompile Include="baseScene.cpp" />
     <ClCompile Include="board.cpp" />
     <ClCompile Include="bossEnemy.cpp" />
     <ClCompile Include="collisionDetect.cpp" />
@@ -146,7 +145,6 @@
   <ItemGroup>
     <ClInclude Include="abstractEnemy.h" />
     <ClInclude Include="abstractShot.h" />
-    <ClInclude Include="baseScene.h" />
     <ClInclude Include="board.h" />
     <ClInclude Include="bossEnemy.h" />
     <ClInclude Include="collisionDetect.h" />

@@ -10,7 +10,6 @@ gameMgr::gameMgr() {
 	_enemyMgr = std::make_shared<enemyMgr>();
 	_pShotMgr = std::make_shared<pShotMgr>(_player, _enemyMgr);
 	_effectMgr = std::make_shared<effectMgr>();
-	_collisionDetect = std::make_shared<collisionDetect>(_player,_enemyMgr,_pShotMgr,_effectMgr);
 }
 
 bool gameMgr::update() {

@@ -12,7 +12,7 @@ title::title() {
 	titleElements[3] = { 100,250,"EXIT" };
 }
 
-void title::update() {
+bool title::update() {
 	DrawFormatString(0, 0, GetColor(255, 255, 255), "selectNum[%d]", selectNum);
 
 	keyboardUpdate();
@@ -33,9 +33,10 @@ void title::update() {
 			titleElements[i].x = 100;
 		}
 	}
+	return true;
 }
 
-void title::draw() {
+void title::draw() const {
 	for (int i = 0; i < MENU_NUM; i++) {
 		DrawFormatString(titleElements[i].x, titleElements[i].y, GetColor(255, 255, 255), titleElements[i].name);
 	}

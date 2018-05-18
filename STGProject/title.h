@@ -1,5 +1,5 @@
 #pragma once
-#include "baseScene.h"
+#include "task.h"
 #include "define.h"
 
 #define MENU_NUM 4
@@ -10,12 +10,12 @@ typedef struct {
 
 }titleElements_t;
 
-class title :public baseScene {
+class title :public task {
 public:
 	title();
 	~title() = default;
-	void update();
-	void draw();
+	bool update() override;
+	void draw() const override;
 
 private:
 	titleElements_t titleElements[MENU_NUM];
