@@ -3,19 +3,20 @@
 #include "define.h"
 #include <math.h>
 
-playerShot::playerShot(float x, float y) : abstractShot(x, y) {
+playerShot::playerShot(float x, float y) :abstractShot(x, y),
+										_x(x),
+										_y(y),
+										_angle(define::PI / 2.f*3.f),
+										_speed(16.f){
 	_img = LoadGraph("img/shot00.png");
 	GetGraphSize(_img, &_width, &_height);
-	_x = x;
-	_y = y;
-	_angle = define::PI / 2.f*3.f;
-	_speed = 16.f;
 	_counter = 0;
 	_hitRad = 50.f;
 }
 
 bool playerShot::update() {
 	_counter++;
+
 	_x += (float)cos(_angle)*_speed;
 	_y += (float)sin(_angle)*_speed;
 	return isInside();

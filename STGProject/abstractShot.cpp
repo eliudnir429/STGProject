@@ -4,10 +4,11 @@
 #include <math.h>
 
 abstractShot::abstractShot(float x, float y) :
-	_x(0.f),
-	_y(0.f),
+	_x(x),
+	_y(y),
 	_angle(0.f),
-	_speed(0.f) {
+	_speed(0.f),
+	_hitRad(50.f){
 }
 
 bool abstractShot::update() {
