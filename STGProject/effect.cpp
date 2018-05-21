@@ -12,7 +12,7 @@ effect::effect(float x, float y, float size) :_x(x), _y(y), _speed(20.f) {
 
 bool effect::update() {
 	_counter++;
-
+	_y += 2.f;
 	if (_counter % 3 == 0) {
 		_imgNum++;
 	}
