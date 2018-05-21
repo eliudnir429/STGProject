@@ -10,12 +10,14 @@
 class pShotMgr :public task {
 public:
 	pShotMgr(const std::shared_ptr<player>& player,
-			const std::shared_ptr<enemyMgr>& enemyMgr);
+			const std::shared_ptr<enemyMgr>& enemyMgr,
+			const std::shared_ptr<effectMgr>& effectMgr);
 	virtual ~pShotMgr() = default;
 	bool update();
 	void draw() const override;
 	bool isHit(std::shared_ptr<playerShot> shot);
-	void makeShot(std::shared_ptr<player>);
+	void makeShot();
+	void makeEffect(std::shared_ptr<playerShot> shot);
 private:
 	std::list<std::shared_ptr<playerShot>> _list;
 	std::shared_ptr<player> _player;

@@ -21,6 +21,9 @@ void effectMgr::draw() const {
 	}
 }
 
-void effectMgr::makeEffect(float x, float y) {
-	_list.emplace_back(std::make_shared<effect>(x, y));
+void effectMgr::makeEffect(std::shared_ptr<abstractShot> shot) {
+	float shotX, shotY;
+
+	shot->getPosition(shotX, shotY);
+	_list.emplace_back(std::make_shared<effect>(shotX, shotY));
 }

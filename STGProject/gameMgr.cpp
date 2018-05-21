@@ -8,8 +8,8 @@ gameMgr::gameMgr() {
 	_board = std::make_shared<board>();
 	_player = std::make_shared<player>();
 	_enemyMgr = std::make_shared<enemyMgr>();
-	_pShotMgr = std::make_shared<pShotMgr>(_player, _enemyMgr);
 	_effectMgr = std::make_shared<effectMgr>();
+	_pShotMgr = std::make_shared<pShotMgr>(_player, _enemyMgr, _effectMgr);
 }
 
 bool gameMgr::update() {

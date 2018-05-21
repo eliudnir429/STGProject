@@ -38,3 +38,8 @@ void abstractShot::getCollisionArea(float& x, float& y, float& rad) {
 	y = _y;
 	rad = _hitRad;
 }
+
+void abstractShot::getPosition(float& x, float& y) {
+	x = _x;
+	y = _y;
+}
