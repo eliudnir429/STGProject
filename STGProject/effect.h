@@ -10,6 +10,7 @@ public:
 private:
 	float _x, _y;
 	float _speed;
+	float _angle;
 	int _img[11];
 	int _counter;
 	int _imgNum;

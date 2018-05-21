@@ -5,8 +5,8 @@
 #include <DxLib.h>
 
 enemyMgr::enemyMgr() {
-	_list.emplace_back(std::make_shared<enemy>		(define::IN_W / 3.f, 0.f));
-	_list.emplace_back(std::make_shared<enemy>		(define::IN_W / 3.f * 2.f, 0.f));
+	_list.emplace_back(std::make_shared<enemy>		(define::IN_W / 4.f, 300.f));
+	_list.emplace_back(std::make_shared<enemy>		(define::IN_W / 4.f * 3.f, 300.f));
 	_list.emplace_back(std::make_shared<bossEnemy>(define::IN_W / 2.f, 0.f));
 }
 
