@@ -52,6 +52,7 @@ bool pShotMgr::isHit(std::shared_ptr<playerShot> shot) {
 		_hitRad = _shotRad + _enemyRad;
 
 		if ((_hitX*_hitX) + (_hitY*_hitY) <= (_hitRad*_hitRad)) {
+			it->damage();
 			return true;
 		}
 	}

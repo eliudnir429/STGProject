@@ -7,8 +7,8 @@ int gameMgr::frame = 0;
 gameMgr::gameMgr() {
 	_board = std::make_shared<board>();
 	_player = std::make_shared<player>();
-	_enemyMgr = std::make_shared<enemyMgr>();
 	_effectMgr = std::make_shared<effectMgr>();
+	_enemyMgr = std::make_shared<enemyMgr>(_effectMgr);
 	_pShotMgr = std::make_shared<pShotMgr>(_player, _enemyMgr, _effectMgr);
 }
 

@@ -9,11 +9,5 @@ enemy::enemy(float x, float y) : abstractEnemy(x, y) {
 	_angle = define::PI / 2.f;
 	_speed = 0.f;
 	_hitRad = 5.f;
-}
-
-bool enemy::update() {
-	_counter++;
-	_x += (float)cos(_angle)*_speed;
-	_y += (float)sin(_angle)*_speed;
-	return isInside();
+	_health = 20;
 }

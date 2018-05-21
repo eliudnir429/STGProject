@@ -9,6 +9,7 @@ bossEnemy::bossEnemy(float x, float y) : abstractEnemy(x, y){
 	_angle = define::PI / 2.f;
 	_speed = 2.f;
 	_hitRad = 10.f;
+	_health = 50;
 }
 
 bool bossEnemy::update() {
@@ -25,5 +26,6 @@ bool bossEnemy::update() {
 	}
 	_x += (float)cos(_angle)*_speed;
 	_y += (float)sin(_angle)*_speed;
+
 	return isInside();
 }

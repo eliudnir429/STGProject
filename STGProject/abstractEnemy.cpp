@@ -13,7 +13,7 @@ bool abstractEnemy::update() {
 	_counter++;
 	_x += (float)cos(_angle)*_speed;
 	_y += (float)sin(_angle)*_speed;
-	return true;
+	return isInside();
 }
 
 void abstractEnemy::draw() const {
@@ -34,8 +34,24 @@ bool abstractEnemy::isInside() {
 	return true;
 }
 
+bool abstractEnemy::isAlive() {
+	if (_health == 0) {
+		return false;
+	}
+	return true;
+}
+
 void abstractEnemy::getCollisionArea(float& x, float& y, float& rad) {
 	x = _x;
 	y = _y;
 	rad = _hitRad;
+}
+
+void abstractEnemy::damage() {
+	_health--;
+}
+
+void abstractEnemy::getPosition(float& x, float& y) {
+	x = _x;
+	y = _y;
 }
