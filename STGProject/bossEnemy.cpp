@@ -8,7 +8,7 @@ bossEnemy::bossEnemy(float x, float y) : abstractEnemy(x, y){
 	getSize();
 	_angle = define::PI / 2.f;
 	_speed = 2.f;
-	_hitRad = 10.f;
+	_hitRad = 70.f;
 	_health = 50;
 }
 

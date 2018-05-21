@@ -8,6 +8,6 @@ enemy::enemy(float x, float y) : abstractEnemy(x, y) {
 	getSize();
 	_angle = define::PI / 2.f;
 	_speed = 0.f;
-	_hitRad = 5.f;
+	_hitRad = 20.f;
 	_health = 20;
 }
