@@ -1,7 +1,6 @@
 #include "pShotMgr.h"
 #include <DxLib.h>
 #include "define.h"
-#include "collisionDetect.h"
 
 pShotMgr::pShotMgr(const std::shared_ptr<player>& player,
 				const std::shared_ptr<enemyMgr>& enemyMgr) {
@@ -43,11 +42,9 @@ bool pShotMgr::isHit(std::shared_ptr<playerShot> shot) {
 	float _hitX, _hitY, _hitRad;
 
 	shot->getCollisionArea(_shotX, _shotY, _shotRad);
-	DrawFormatString(0, 200, GetColor(255, 255, 255), "%f %f %f", _shotX, _shotY, _shotRad);
 
 	for (auto it : _enemyMgr->_list) {
 		it->getCollisionArea(_enemyX, _enemyY, _enemyRad);
-		DrawFormatString(0, 250, GetColor(255, 255, 255), "%f %f %f", _enemyX, _enemyY, _enemyRad);
 
 		_hitX = _shotX - _enemyX;
 		_hitY = _shotY - _enemyY;

@@ -75,9 +75,6 @@
     <ClCompile Include="effectMgr.cpp">
       <Filter>ソース ファイル\manager</Filter>
     </ClCompile>
-    <ClCompile Include="collisionDetect.cpp">
-      <Filter>ソース ファイル\game</Filter>
-    </ClCompile>
     <ClCompile Include="abstractShot.cpp">
       <Filter>ソース ファイル\game</Filter>
     </ClCompile>
@@ -133,9 +130,6 @@
     </ClInclude>
     <ClInclude Include="effectMgr.h">
       <Filter>ソース ファイル\manager</Filter>
-    </ClInclude>
-    <ClInclude Include="collisionDetect.h">
-      <Filter>ソース ファイル\game</Filter>
     </ClInclude>
     <ClInclude Include="abstractShot.h">
       <Filter>ソース ファイル\game</Filter>
