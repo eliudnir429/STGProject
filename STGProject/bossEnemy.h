@@ -7,6 +7,4 @@ public :
 	bossEnemy(float x, float y);
 	virtual ~bossEnemy() = default;
 	bool update() override;
-private:
-	float _hitRange;
 };

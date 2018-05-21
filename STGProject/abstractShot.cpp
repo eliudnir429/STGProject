@@ -3,12 +3,9 @@
 #include "define.h"
 #include <math.h>
 
-abstractShot::abstractShot(float x, float y) :
-	_x(x),
-	_y(y),
-	_angle(0.f),
-	_speed(0.f),
-	_hitRad(50.f){
+abstractShot::abstractShot(float x, float y) {
+	_x = x;
+	_y = y;
 }
 
 bool abstractShot::update() {
