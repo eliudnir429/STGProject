@@ -17,7 +17,6 @@ public:
 	void draw() const override;
 	bool isHit(std::shared_ptr<playerShot> shot);
 	void makeShot();
-	void makeEffect(std::shared_ptr<playerShot> shot);
 private:
 	std::list<std::shared_ptr<playerShot>> _list;
 	std::shared_ptr<player> _player;

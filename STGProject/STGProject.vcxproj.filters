@@ -81,6 +81,12 @@
     <ClCompile Include="playerShot.cpp">
       <Filter>ソース ファイル\game</Filter>
     </ClCompile>
+    <ClCompile Include="eShotMgr.cpp">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyShot.cpp">
+      <Filter>ソース ファイル\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="define.h">
@@ -135,6 +141,12 @@
       <Filter>ソース ファイル\game</Filter>
     </ClInclude>
     <ClInclude Include="playerShot.h">
+      <Filter>ソース ファイル\game</Filter>
+    </ClInclude>
+    <ClInclude Include="eShotMgr.h">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyShot.h">
       <Filter>ソース ファイル\game</Filter>
     </ClInclude>
   </ItemGroup>
