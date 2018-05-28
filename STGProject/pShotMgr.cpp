@@ -2,18 +2,13 @@
 #include <DxLib.h>
 #include "define.h"
 
-pShotMgr::pShotMgr(const std::shared_ptr<player>& player, 
-				const std::shared_ptr<enemyMgr>& enemyMgr,
+pShotMgr::pShotMgr(const std::shared_ptr<enemyMgr>& enemyMgr,
 				const std::shared_ptr<effectMgr>& effectMgr) {
 	_effectMgr = effectMgr;
-	_player = player;
 	_enemyMgr = enemyMgr;
 }
 
 bool pShotMgr::update() {
-	if (_player->isShoot()) {
-		makeShot();
-	}
 	for (auto it = _list.begin(); it != _list.end();) {
 
 		if ((*it)->update() == false) {
@@ -59,10 +54,7 @@ bool pShotMgr::isHit(std::shared_ptr<playerShot> shot) {
 	return false;
 }
 
-void pShotMgr::makeShot() {
-	float playerX, playerY;
-
-	_player->getPosition(playerX, playerY);
-	_list.emplace_back(std::make_shared<playerShot>(playerX + 25, playerY - 10));
-	_list.emplace_back(std::make_shared<playerShot>(playerX - 25, playerY - 10));
+void pShotMgr::makeShot(float x, float y) {
+	_list.emplace_back(std::make_shared<playerShot>(x + 25, y - 10));
+	_list.emplace_back(std::make_shared<playerShot>(x - 25, y - 10));
 }

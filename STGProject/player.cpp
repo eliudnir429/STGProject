@@ -3,8 +3,11 @@
 #include <DxLib.h>
 #include "keyboard.h"
 
-player::player() :_x((float)(define::IN_W / 2.0)), _y((float)define::IN_H) {
+player::player(std::shared_ptr<pShotMgr> pShotMgr) {
+	_pShotMgr = pShotMgr;
 	LoadDivGraph("img/player00.png", 16, 4, 4, 64, 64, _img, TRUE);
+	_x = define::IN_W / 2.f;
+	_y = define::IN_H;
 	_counter = 0;
 }
 
@@ -12,6 +15,7 @@ bool player::update() {
 	_counter++;
 	keyboardUpdate();
 	move();
+	shoot();
 	return true;
 }
 
@@ -46,11 +50,10 @@ void player::move() {
 	_y += moveY;
 }
 
-bool player::isShoot() {
+void player::shoot() {
 	if (keyboardGet(KEY_INPUT_Z) > 0 && _counter % 4 == 0) {
-		return true;
+		_pShotMgr->makeShot(_x, _y);
 	}
-	return false;
 }
 
 void player::getPosition(float& x, float& y) {

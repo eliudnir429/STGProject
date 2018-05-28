@@ -8,7 +8,7 @@
 
 class enemyMgr :public task {
 public:
-	enemyMgr(std::shared_ptr<effectMgr> effectMgr, std::shared_ptr<eShotMgr> eShotMgr);
+	enemyMgr(std::shared_ptr<eShotMgr> eShotMgr, std::shared_ptr<effectMgr> effectMgr);
 	virtual ~enemyMgr() = default;
 	bool update() override;
 	void draw() const override;

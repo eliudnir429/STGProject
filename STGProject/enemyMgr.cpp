@@ -4,7 +4,7 @@
 #include "bossEnemy.h"
 #include "enemy.h"
 
-enemyMgr::enemyMgr(std::shared_ptr<effectMgr> effectMgr, std::shared_ptr<eShotMgr> eShotMgr) {
+enemyMgr::enemyMgr(std::shared_ptr<eShotMgr> eShotMgr, std::shared_ptr<effectMgr> effectMgr) {
 	_effectMgr = effectMgr;
 	_eShotMgr = eShotMgr;
 	_list.emplace_back(std::make_shared<enemy>(define::IN_W / 4.f, 300.f, _eShotMgr));
