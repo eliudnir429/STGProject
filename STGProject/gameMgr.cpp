@@ -8,7 +8,8 @@ gameMgr::gameMgr() {
 	_board = std::make_shared<board>();
 	_player = std::make_shared<player>();
 	_effectMgr = std::make_shared<effectMgr>();
-	_enemyMgr = std::make_shared<enemyMgr>(_effectMgr);
+	_eShotMgr = std::make_shared<eShotMgr>();
+	_enemyMgr = std::make_shared<enemyMgr>(_effectMgr, _eShotMgr);
 	_pShotMgr = std::make_shared<pShotMgr>(_player, _enemyMgr, _effectMgr);
 }
 
@@ -20,6 +21,7 @@ bool gameMgr::update() {
 	_enemyMgr->update();
 	_pShotMgr->update();
 	_effectMgr->update();
+	_eShotMgr->update();
 	return true;
 }
 
@@ -29,6 +31,7 @@ void gameMgr::draw() const {
 	_enemyMgr->draw();
 	_pShotMgr->draw();
 	_effectMgr->draw();
+	_eShotMgr->draw();
 
 	DrawFormatString(define::OUT_W + 50, 50, GetColor(255, 255, 255), "frame:%d", frame);
 	DrawFormatString(define::OUT_W + 50, 100, GetColor(255, 255, 255), "time:%d", frame / 60);

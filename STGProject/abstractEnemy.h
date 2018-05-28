@@ -1,9 +1,11 @@
 #pragma once
 #include "task.h"
+#include <memory>
+#include "eShotMgr.h"
 
 class abstractEnemy : public task {
 public:
-	abstractEnemy(float x, float y);
+	abstractEnemy(float x, float y, std::shared_ptr<eShotMgr> eShotMgr);
 	virtual ~abstractEnemy() = default;
 	bool update() override;
 	void draw() const override;
@@ -12,6 +14,7 @@ public:
 	void damage();
 	bool isAlive();
 	void getPosition(float& x, float& y);
+	virtual void shoot(float x, float y, float speed, float angle);
 protected:
 	float _x, _y;
 	float _angle;
@@ -21,5 +24,6 @@ protected:
 	int _img;
 	int _counter;
 	int _health;
+	std::shared_ptr<eShotMgr> _eShotMgr;
 	bool isInside();
 };

@@ -3,7 +3,8 @@
 #include <DxLib.h>
 #include "define.h"
 
-abstractEnemy::abstractEnemy(float x, float y) {
+abstractEnemy::abstractEnemy(float x, float y, std::shared_ptr<eShotMgr> eShotMgr) {
+	_eShotMgr = eShotMgr;
 	_x = x;
 	_y = y;
 	_counter = 0;
@@ -54,4 +55,8 @@ void abstractEnemy::damage() {
 void abstractEnemy::getPosition(float& x, float& y) {
 	x = _x;
 	y = _y;
+}
+
+void abstractEnemy::shoot(float x, float y, float speed, float angle) {
+	_eShotMgr->makeShot(x, y, speed, angle);
 }

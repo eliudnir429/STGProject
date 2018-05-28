@@ -2,6 +2,7 @@
 #include "abstractShot.h"
 
 class enemyShot :public  abstractShot {
-	enemyShot(float x, float y);
+public:
+	enemyShot(float x, float y, float speed, float angle);
 	virtual ~enemyShot() = default;
 };

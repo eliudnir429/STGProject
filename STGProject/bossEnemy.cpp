@@ -3,7 +3,7 @@
 #include "define.h"
 #include <math.h>
 
-bossEnemy::bossEnemy(float x, float y) : abstractEnemy(x, y){
+bossEnemy::bossEnemy(float x, float y, std::shared_ptr<eShotMgr> eShotMgr) : abstractEnemy(x, y, eShotMgr){
 	_img = LoadGraph("img/enemy01.png");
 	getSize();
 	_angle = define::PI / 2.f;
@@ -19,6 +19,7 @@ bool bossEnemy::update() {
 	}
 	if (120 < _counter&&_counter <= 240) {
 		_speed = 0.0;
+		shoot(_x, _y, 20.f, define::PI / 2);
 	}
 	if (240 < _counter) {
 		_angle = define::PI / 2.f*3.f;

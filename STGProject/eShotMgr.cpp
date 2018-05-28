@@ -1,14 +1,14 @@
 #include "eShotMgr.h"
 #include "enemyShot.h"
 
-eShotMgr::eShotMgr(std::shared_ptr<enemyMgr> enemyMgr) {
-	_enemyMgr = enemyMgr;
+eShotMgr::eShotMgr() {
 }
 
 bool eShotMgr::update() {
 	for (auto it : _list) {
 		it->update();
 	}
+	return true;
 }
 
 void eShotMgr::draw() const {
@@ -17,11 +17,10 @@ void eShotMgr::draw() const {
 	}
 }
 
-void eShotMgr::makeShot() {
-	float _enemyX, _enemyY;
-
+void eShotMgr::makeShot(float x, float y, float speed, float angle) {
+	_list.emplace_back(std::make_shared<enemyShot>(x, y, speed, angle));
 }
 
 bool eShotMgr::isHit() {
-
+	return true;
 }
