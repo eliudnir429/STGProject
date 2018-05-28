@@ -19,7 +19,9 @@ bool bossEnemy::update() {
 	}
 	if (120 < _counter&&_counter <= 240) {
 		_speed = 0.0;
-		shoot(_x, _y, 20.f, define::PI / 2);
+		if (_counter % 5 == 0) {
+			shoot(_x, _y, 15.f, define::PI / 5 * (GetRand(4) + 1));
+		}
 	}
 	if (240 < _counter) {
 		_angle = define::PI / 2.f*3.f;

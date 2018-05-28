@@ -6,7 +6,7 @@
 
 class eShotMgr :public task {
 public:
-	eShotMgr();
+	eShotMgr() = default;
 	virtual ~eShotMgr() = default;
 	bool update();
 	void draw() const;
