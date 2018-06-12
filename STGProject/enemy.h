@@ -3,6 +3,6 @@
 
 class enemy :public abstractEnemy{
 public:
-	enemy(float x, float y, std::shared_ptr<eShotMgr> eShotMgr);
+	enemy(float x, float y);
 	virtual ~enemy() = default;
 };

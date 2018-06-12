@@ -132,14 +132,13 @@
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="enemyMgr.cpp" />
     <ClCompile Include="enemyShot.cpp" />
-    <ClCompile Include="eShotMgr.cpp" />
     <ClCompile Include="gameMgr.cpp" />
     <ClCompile Include="keyboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
-    <ClCompile Include="pShotMgr.cpp" />
     <ClCompile Include="sceneMgr.cpp" />
     <ClCompile Include="playerShot.cpp" />
+    <ClCompile Include="shotMgr.cpp" />
     <ClCompile Include="systemMain.cpp" />
     <ClCompile Include="title.cpp" />
   </ItemGroup>
@@ -154,13 +153,12 @@
     <ClInclude Include="enemy.h" />
     <ClInclude Include="enemyMgr.h" />
     <ClInclude Include="enemyShot.h" />
-    <ClInclude Include="eShotMgr.h" />
     <ClInclude Include="gameMgr.h" />
     <ClInclude Include="keyboard.h" />
     <ClInclude Include="player.h" />
-    <ClInclude Include="pShotMgr.h" />
     <ClInclude Include="sceneMgr.h" />
     <ClInclude Include="playerShot.h" />
+    <ClInclude Include="shotMgr.h" />
     <ClInclude Include="systemMain.h" />
     <ClInclude Include="task.h" />
     <ClInclude Include="title.h" />

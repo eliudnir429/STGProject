@@ -28,11 +28,17 @@
     <Filter Include="ソース ファイル\abstract">
       <UniqueIdentifier>{5e4fe153-fd05-433d-8a1c-b7a79302bf93}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\player">
+      <UniqueIdentifier>{06f398a3-b897-4124-923c-359f6aa8ba3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\enemy">
+      <UniqueIdentifier>{266271b6-6a51-45bb-a103-f48403e0288a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\shot">
+      <UniqueIdentifier>{85fa94df-d0b7-47b4-8366-35a074f0c1e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="player.cpp">
-      <Filter>ソース ファイル\game</Filter>
-    </ClCompile>
     <ClCompile Include="keyboard.cpp">
       <Filter>ソース ファイル\system</Filter>
     </ClCompile>
@@ -48,16 +54,7 @@
     <ClCompile Include="title.cpp">
       <Filter>ソース ファイル\scene</Filter>
     </ClCompile>
-    <ClCompile Include="enemy.cpp">
-      <Filter>ソース ファイル\game</Filter>
-    </ClCompile>
-    <ClCompile Include="bossEnemy.cpp">
-      <Filter>ソース ファイル\game</Filter>
-    </ClCompile>
     <ClCompile Include="gameMgr.cpp">
-      <Filter>ソース ファイル\manager</Filter>
-    </ClCompile>
-    <ClCompile Include="sceneMgr.cpp">
       <Filter>ソース ファイル\manager</Filter>
     </ClCompile>
     <ClCompile Include="board.cpp">
@@ -69,26 +66,35 @@
     <ClCompile Include="effect.cpp">
       <Filter>ソース ファイル\game</Filter>
     </ClCompile>
-    <ClCompile Include="pShotMgr.cpp">
-      <Filter>ソース ファイル\manager</Filter>
-    </ClCompile>
     <ClCompile Include="effectMgr.cpp">
       <Filter>ソース ファイル\manager</Filter>
-    </ClCompile>
-    <ClCompile Include="playerShot.cpp">
-      <Filter>ソース ファイル\game</Filter>
-    </ClCompile>
-    <ClCompile Include="eShotMgr.cpp">
-      <Filter>ソース ファイル\manager</Filter>
-    </ClCompile>
-    <ClCompile Include="enemyShot.cpp">
-      <Filter>ソース ファイル\game</Filter>
     </ClCompile>
     <ClCompile Include="abstractEnemy.cpp">
       <Filter>ソース ファイル\abstract</Filter>
     </ClCompile>
     <ClCompile Include="abstractShot.cpp">
       <Filter>ソース ファイル\abstract</Filter>
+    </ClCompile>
+    <ClCompile Include="shotMgr.cpp">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>ソース ファイル\player</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>ソース ファイル\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="bossEnemy.cpp">
+      <Filter>ソース ファイル\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyShot.cpp">
+      <Filter>ソース ファイル\shot</Filter>
+    </ClCompile>
+    <ClCompile Include="playerShot.cpp">
+      <Filter>ソース ファイル\shot</Filter>
+    </ClCompile>
+    <ClCompile Include="sceneMgr.cpp">
+      <Filter>ソース ファイル\scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,23 +104,11 @@
     <ClInclude Include="keyboard.h">
       <Filter>ソース ファイル\system</Filter>
     </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>ソース ファイル\game</Filter>
-    </ClInclude>
     <ClInclude Include="systemMain.h">
       <Filter>ソース ファイル\system</Filter>
     </ClInclude>
     <ClInclude Include="title.h">
       <Filter>ソース ファイル\scene</Filter>
-    </ClInclude>
-    <ClInclude Include="enemy.h">
-      <Filter>ソース ファイル\game</Filter>
-    </ClInclude>
-    <ClInclude Include="bossEnemy.h">
-      <Filter>ソース ファイル\game</Filter>
-    </ClInclude>
-    <ClInclude Include="sceneMgr.h">
-      <Filter>ソース ファイル\manager</Filter>
     </ClInclude>
     <ClInclude Include="gameMgr.h">
       <Filter>ソース ファイル\manager</Filter>
@@ -128,20 +122,8 @@
     <ClInclude Include="effect.h">
       <Filter>ソース ファイル\game</Filter>
     </ClInclude>
-    <ClInclude Include="pShotMgr.h">
-      <Filter>ソース ファイル\manager</Filter>
-    </ClInclude>
     <ClInclude Include="effectMgr.h">
       <Filter>ソース ファイル\manager</Filter>
-    </ClInclude>
-    <ClInclude Include="playerShot.h">
-      <Filter>ソース ファイル\game</Filter>
-    </ClInclude>
-    <ClInclude Include="eShotMgr.h">
-      <Filter>ソース ファイル\manager</Filter>
-    </ClInclude>
-    <ClInclude Include="enemyShot.h">
-      <Filter>ソース ファイル\game</Filter>
     </ClInclude>
     <ClInclude Include="task.h">
       <Filter>ソース ファイル\abstract</Filter>
@@ -151,6 +133,27 @@
     </ClInclude>
     <ClInclude Include="abstractShot.h">
       <Filter>ソース ファイル\abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="shotMgr.h">
+      <Filter>ソース ファイル\manager</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>ソース ファイル\player</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>ソース ファイル\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="bossEnemy.h">
+      <Filter>ソース ファイル\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyShot.h">
+      <Filter>ソース ファイル\shot</Filter>
+    </ClInclude>
+    <ClInclude Include="playerShot.h">
+      <Filter>ソース ファイル\shot</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneMgr.h">
+      <Filter>ソース ファイル\scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -29,4 +29,9 @@ public:
 		CONFIG,
 		EXIT,
 	};
+
+	enum shotState {
+		PLAYER,
+		ENEMY,
+	};
 };

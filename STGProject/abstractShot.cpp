@@ -3,25 +3,34 @@
 #include "define.h"
 #include <math.h>
 
-abstractShot::abstractShot(float x, float y) {
-	_x = x;
-	_y = y;
+abstractShot::abstractShot() {
+	_x = 0;
+	_y = 0;
+	_angle = 0;
+	_speed = 0;
+	_hitRad = 0;
+	_width = 0;
+	_height = 0;
+	_img = 0;
+	_counter = 0;
 }
 
 bool abstractShot::update() {
-	_counter++;
+	if (!isInside()) return false;
 
 	_x += (float)cos(_angle)*_speed;
 	_y += (float)sin(_angle)*_speed;
-	return isInside();
+	_counter++;
+
+	return true;
 }
 
 void abstractShot::draw() const {
-	DrawRotaGraphF(_x, _y, 0.5, 0.0, _img, TRUE);
+	DrawRotaGraphF(_x, _y, 1.0, 0.0, _img, TRUE);
 }
 
 bool abstractShot::isInside() {
-	if (_counter < 60) {
+	if (_counter < 30) {
 		return true;
 	}
 	if (_x < -_width / 2 ||
@@ -31,15 +40,4 @@ bool abstractShot::isInside() {
 		return false;
 	}
 	return true;
-}
-
-void abstractShot::getCollisionArea(float& x, float& y, float& rad) {
-	x = _x;
-	y = _y;
-	rad = _hitRad;
-}
-
-void abstractShot::getPosition(float& x, float& y) {
-	x = _x;
-	y = _y;
 }

@@ -2,18 +2,20 @@
 #include "task.h"
 #include <list>
 #include <memory>
+#include <DxLib.h>
+#include "define.h"
 #include "abstractEnemy.h"
+#include "bossEnemy.h"
+#include "enemy.h"
 #include "effectMgr.h"
-#include "eShotMgr.h"
 
 class enemyMgr :public task {
 public:
-	enemyMgr(std::shared_ptr<eShotMgr> eShotMgr, std::shared_ptr<effectMgr> effectMgr);
+	enemyMgr();
 	virtual ~enemyMgr() = default;
 	bool update() override;
 	void draw() const override;
+	void addEnemy(float x, float y);
 	std::list<std::shared_ptr<abstractEnemy>> _list;
 private:
-	std::shared_ptr<effectMgr> _effectMgr;
-	std::shared_ptr<eShotMgr> _eShotMgr;
 };

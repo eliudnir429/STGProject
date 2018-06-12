@@ -1,20 +1,28 @@
 #include "abstractEnemy.h"
-#include <math.h>
-#include <DxLib.h>
-#include "define.h"
 
-abstractEnemy::abstractEnemy(float x, float y, std::shared_ptr<eShotMgr> eShotMgr) {
-	_eShotMgr = eShotMgr;
-	_x = x;
-	_y = y;
+abstractEnemy::abstractEnemy() {
+	_x = 0;
+	_y = 0;
+	_angle = 0;
+	_speed = 0;
+	_hitRad = 0;
+	_width = 0;
+	_height = 0;
+	_health = 0;
+
+	_img = 0;
 	_counter = 0;
+	shot = false;
+
 }
 
 bool abstractEnemy::update() {
-	_counter++;
+	if (!isInside()) return false;
+
 	_x += (float)cos(_angle)*_speed;
 	_y += (float)sin(_angle)*_speed;
-	return isInside();
+	_counter++;
+	return true;
 }
 
 void abstractEnemy::draw() const {
@@ -23,6 +31,10 @@ void abstractEnemy::draw() const {
 
 void abstractEnemy::getSize() {
 	GetGraphSize(_img, &_width, &_height);
+}
+void abstractEnemy::getPosition(float& x, float& y) {
+	x = _x;
+	y = _y;
 }
 
 bool abstractEnemy::isInside() {
@@ -34,29 +46,7 @@ bool abstractEnemy::isInside() {
 	}
 	return true;
 }
-
-bool abstractEnemy::isAlive() {
-	if (_health == 0) {
-		return false;
-	}
-	return true;
-}
-
-void abstractEnemy::getCollisionArea(float& x, float& y, float& rad) {
-	x = _x;
-	y = _y;
-	rad = _hitRad;
-}
-
-void abstractEnemy::damage() {
-	_health--;
-}
-
-void abstractEnemy::getPosition(float& x, float& y) {
-	x = _x;
-	y = _y;
-}
-
-void abstractEnemy::shoot(float x, float y, float speed, float angle) {
-	_eShotMgr->makeShot(x, y, speed, angle);
+//shot‚ð•Ô‚·
+bool abstractEnemy::isShoot() {
+	return shot;
 }

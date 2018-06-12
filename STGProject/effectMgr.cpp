@@ -24,13 +24,13 @@ void effectMgr::draw() const {
 void effectMgr::makeEffect(std::shared_ptr<abstractShot> shot) {
 	float shotX, shotY;
 
-	shot->getPosition(shotX, shotY);
+//	shot->getPosition(shotX, shotY);
 	_list.emplace_back(std::make_shared<effect>(shotX, shotY, 1.0));
 }
 
 void effectMgr::makeDestroyEffect(std::shared_ptr<abstractEnemy> enemy) {
 	float enemyX, enemyY;
 
-	enemy->getPosition(enemyX, enemyY);
+//	enemy->getPosition(enemyX, enemyY);
 	_list.emplace_back(std::make_shared<effect>(enemyX, enemyY, 5.0));
 }
